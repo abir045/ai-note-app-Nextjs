@@ -11,7 +11,12 @@ export default async function NotesPage() {
 
   if (!userId) throw Error("userId undefined");
 
-  const allNotes = await prisma.note?.findMany({ where: { userId } });
+  const allNotes = await prisma.note.findMany({ where: { userId } });
 
-  return <div>{JSON.stringify(allNotes)}</div>;
+  return (
+    <div>
+      {JSON.stringify(allNotes)}
+      {/* <h1>al notes</h1> */}
+    </div>
+  );
 }
